@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Input } from '@mui/material';
 
 const ToDoList = () => {
     const [inputValue, setInputValue] = useState('')
@@ -7,6 +8,7 @@ const ToDoList = () => {
         { id: 1, text: 'Task 1' },
         { id: 2, text: 'Task 2' },
     ]);
+    const [completedTasks, setCompletedTasks] = useState([]);
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -27,6 +29,14 @@ const ToDoList = () => {
         setTasks(tasks.filter(task => task.id !== taskId));
     };
 
+    const markTaskCompleted = (taskId) => {
+        const taskToComplete = tasks.find(task => task.id === taskId);
+        if (taskToComplete) {
+            setCompletedTasks([...completedTasks, taskToComplete]);
+            setTasks(tasks.filter(task => task.id !== taskId));
+        }
+    }
+
   return (
     <div>
         <h2>Task Tracker</h2>
@@ -39,7 +49,20 @@ const ToDoList = () => {
       <button onClick={addTask}>Add Task</button>
         <div>
             {tasks.map(task => (
-                <p key={task.id}>{task.text}<DeleteIcon onClick={() => deleteTask(task.id)} /></p> 
+            <p key={task.id}>{task.text}<input type="checkbox" onClick={() => markTaskCompleted(task.id)} /><DeleteIcon onClick={() => deleteTask(task.id)} /></p> 
+            ))}
+        </div>
+        <div>
+            <h3>Completed Tasks</h3>
+            {completedTasks.map(task => (
+                <p key={task.id}>
+                    <input
+                    type="checkbox"
+                    checked
+                    disabled
+                    />
+                    {task.text}
+                </p>
             ))}
         </div>
     </div>
