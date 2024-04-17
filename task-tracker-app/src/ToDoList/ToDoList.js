@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ToDoList = () => {
     const [inputValue, setInputValue] = useState('')
@@ -19,8 +20,12 @@ const ToDoList = () => {
             };
             setTasks([...tasks, newTask]);
             setInputValue('');
-        }
-    }
+        };
+    };
+
+    const deleteTask = (taskId) => {
+        setTasks(tasks.filter(task => task.id !== taskId));
+    };
 
   return (
     <div>
@@ -34,7 +39,7 @@ const ToDoList = () => {
       <button onClick={addTask}>Add Task</button>
         <div>
             {tasks.map(task => (
-                <p key={task.id}>{task.text}</p>
+                <p key={task.id}>{task.text}<DeleteIcon onClick={() => deleteTask(task.id)} /></p> 
             ))}
         </div>
     </div>
