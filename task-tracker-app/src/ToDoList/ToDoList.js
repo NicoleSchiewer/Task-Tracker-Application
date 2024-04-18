@@ -1,24 +1,27 @@
 import React, { useState } from 'react'
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Input } from '@mui/material';
+import TaskList from './TaskList';
 
 const ToDoList = () => {
     const [inputValue, setInputValue] = useState('')
     const [tasks, setTasks] = useState([
-        { id: 1, text: 'Task 1' },
-        { id: 2, text: 'Task 2' },
+        { id: 1, text: 'Task 1', type: 'work', priority: 'high' },
+        { id: 2, text: 'Task 2', type: 'home', priority: 'low' },
     ]);
     const [completedTasks, setCompletedTasks] = useState([]);
+    const [isEditing, setIsEditing] = useState(null);
+    const [setEditedText] = useState('');
+
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     }
 
     const addTask = () => {
-        if (inputValue.trim !== '') {
+        if (inputValue !== '') {
             const newTask = {
                 id: tasks.length + 1,
-                text: inputValue.trim()
+                text: inputValue.trim(),
+                type: 'work'
             };
             setTasks([...tasks, newTask]);
             setInputValue('');
@@ -36,6 +39,15 @@ const ToDoList = () => {
             setTasks(tasks.filter(task => task.id !== taskId));
         }
     }
+    const handleEditStart = (task) => {
+        setIsEditing(task.id);
+        setEditedText(task.text);
+    };
+
+
+
+    const incompleteTaskCount = tasks.length;
+    const completeTaskCount = completedTasks.length;
 
   return (
     <div>
@@ -47,11 +59,15 @@ const ToDoList = () => {
         onChange={handleInputChange}
       />
       <button onClick={addTask}>Add Task</button>
-        <div>
-            {tasks.map(task => (
-            <p key={task.id}>{task.text}<input type="checkbox" onClick={() => markTaskCompleted(task.id)} /><DeleteIcon onClick={() => deleteTask(task.id)} /></p> 
-            ))}
-        </div>
+        <TaskList
+            tasks={tasks}
+            setTasks={setTasks}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
+            onEditStart={handleEditStart}
+            onDelete={deleteTask}
+            onComplete={markTaskCompleted}    
+        />
         <div>
             <h3>Completed Tasks</h3>
             {completedTasks.map(task => (
@@ -61,10 +77,15 @@ const ToDoList = () => {
                     checked
                     disabled
                     />
-                    {task.text}
+                    {task.text} - {task.type} - {task.priority}
                 </p>
             ))}
         </div>
+        <div>
+                <h3>Task Summary</h3>
+                <p>Incomplete Tasks: {incompleteTaskCount}</p>
+                <p>Completed Tasks: {completeTaskCount}</p>
+            </div>
     </div>
   )
 }
