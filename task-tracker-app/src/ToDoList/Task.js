@@ -26,7 +26,7 @@ const Task = ({ task, setTasks, onDelete, onComplete, setIsEditing, isEditing })
     
     return (
         <div>
-            {task.id === isEditing ? ( // Check if current task is being edited
+            {task.id === isEditing ? (
                 <input
                     type="text"
                     value={editedText}
@@ -35,12 +35,12 @@ const Task = ({ task, setTasks, onDelete, onComplete, setIsEditing, isEditing })
                     autoFocus
                 />
             ) : (
-                <p>
-                    {task.text} - {task.type} - {task.priority}
+                <div>
+                    {/* {task.text} - {task.type} - {task.priority} */}
                     <input type="checkbox" onClick={() => onComplete(task.id)} />
                     <ModeEditIcon onClick={handleEditStart} />
                     <DeleteIcon onClick={() => onDelete(task.id)} />
-                </p>
+                </div>
             )}
         </div>
     );

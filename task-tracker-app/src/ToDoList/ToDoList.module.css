@@ -1,0 +1,18 @@
+.taskTrackerHeader {
+    color: #a84b77;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/*Table Style Selectors */
+table, tr, th, td {
+    border: 1px solid #a84b77;
+    border-collapse: collapse;
+}
+
+.completeIncompleteTable, .priorityTable {
+    background-color: white;
+}
+
