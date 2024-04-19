@@ -36,7 +36,6 @@ const Task = ({ task, setTasks, onDelete, onComplete, setIsEditing, isEditing })
                 />
             ) : (
                 <div>
-                    {/* {task.text} - {task.type} - {task.priority} */}
                     <input type="checkbox" onClick={() => onComplete(task.id)} />
                     <ModeEditIcon onClick={handleEditStart} />
                     <DeleteIcon onClick={() => onDelete(task.id)} />

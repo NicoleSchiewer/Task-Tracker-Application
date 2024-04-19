@@ -7,6 +7,7 @@ const TaskList = ({ tasks, setTasks, setIsEditing, onEditStart, onDelete, onComp
     <table className={classes.taskManagerTable}>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Task</th>
           <th>Type</th>
           <th>Priority</th>
@@ -14,8 +15,8 @@ const TaskList = ({ tasks, setTasks, setIsEditing, onEditStart, onDelete, onComp
         </tr>
       </thead>
       <tbody>
-        {tasks.map(task => (
-          <tr key={task.id}>
+        {tasks.map((task, index) => (
+          <tr key={task.id} className={index % 2 === 0 ? classes.lightPinkRow : ''}>
             <td>{task.id}</td>
             <td>{task.text}</td>
             <td>{task.type}</td>
