@@ -1,0 +1,125 @@
+.taskTrackerHeader {
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.priorityTable {
+  height: 155px;
+  width: 200px;
+}
+
+.completedTaskList {
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.individualCompletedTask {
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
+}
+/*Table Style Selectors */
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  margin: 4em auto;
+  align-items: center;
+}
+
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid #a84b7669;
+}
+
+.inProgressHeader {
+  background-color: #d6a6be;
+  color: white;
+}
+.completedHeader {
+  background-color: #cdb4db;
+  color: white;
+}
+
+.completeIncompleteTable,
+.priorityTable {
+  background-color: white;
+}
+
+.completeIncompleteTable {
+  height: 65px;
+  width: 200px;
+}
+
+.countCells {
+  width: 50px;
+}
+
+.low {
+  background-color: #ffc8dd;
+}
+
+.medium {
+  background-color: #ffafcc;
+}
+
+.high {
+  background-color: #cdb4db;
+}
+
+/*Button Styling */
+.addTaskButton {
+  margin-left: 1em;
+  border-radius: 20px;
+  border: none;
+  width: 8em;
+  height: 2.5em;
+  background-color: #ffc8dd;
+  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #a84b7669;
+}
+
+/* Modal Styles */
+.modal {
+  background-color: #fff;
+  border: 1px solid #a84b77;
+  border-radius: 10px;
+}
+
+.modalTitle {
+  background-color: #a84b77;
+  color: white;
+}
+
+.modalActions {
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.cancel {
+  color: black;
+}
+
+.taskLabel {
+  padding-bottom: 20px;
+}
+
+.selectInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

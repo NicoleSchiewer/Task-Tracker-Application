@@ -1,0 +1,10 @@
+.taskManagerTable {
+  background-color: white;
+  width: 70em;
+  margin: 0 auto;
+  height: 7em;
+}
+
+.lightPinkRow {
+  background-color: #cdb4db;
+}
