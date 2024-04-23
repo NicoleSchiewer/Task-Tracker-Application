@@ -1,36 +1,36 @@
 .taskTrackerHeader {
-  font-family: 'Pacifico', cursive;
-  font-style: normal;
-  font-weight: 400;
   color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .priorityTable {
-  width: 200px;
   height: 155px;
+  width: 200px;
 }
 
 .completedTaskList {
-  font-family: 'Pacifico', cursive;
-  font-style: normal;
-  font-weight: 400;
   color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .individualCompletedTask {
-  font-size: 1.2em;
-  font-family: 'Pacifico', cursive;
-  font-style: normal;
-  font-weight: 400;
   color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
 }
 /*Table Style Selectors */
 .tableContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 5em;
   margin: 4em auto;
+  align-items: center;
 }
 
 table,
@@ -57,8 +57,8 @@ td {
 }
 
 .completeIncompleteTable {
-  width: 200px;
   height: 65px;
+  width: 200px;
 }
 
 .countCells {
@@ -79,18 +79,19 @@ td {
 
 /*Button Styling */
 .addTaskButton {
+  margin-left: 1em;
+  border-radius: 20px;
+  border: none;
   width: 8em;
   height: 2.5em;
-  margin-left: 1em;
-  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
   background-color: #ffc8dd;
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  font-size: 1em;
+  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
+  color: white;
   font-family: 'Roboto condensed';
   font-weight: bold;
-  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #a84b7669;
 }
 
 /* Modal Styles */
@@ -106,8 +107,8 @@ td {
 }
 
 .modalActions {
-  justify-content: space-between;
   padding: 10px 20px;
+  justify-content: space-between;
 }
 
 .cancel {
