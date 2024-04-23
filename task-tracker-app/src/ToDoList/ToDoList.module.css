@@ -1,111 +1,119 @@
 .taskTrackerHeader {
-    color: #a84b77;
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .priorityTable {
-    height: 155px;
-    width: 200px;
-    margin: 20px 50px;
+  height: 155px;
+  width: 200px;
+  margin: 20px 50px;
 }
 /*Table Style Selectors */
-table, tr, th, td {
-    border: 1px solid #a84b77;
-    border-collapse: collapse;
+table,
+tr,
+th,
+td {
+  border: 1px solid #a84b77;
+  border-collapse: collapse;
 }
 
 .inProgressHeader {
-    background-color: #d6a6be;
-    color: white;
+  background-color: #d6a6be;
+  color: white;
 }
 .completedHeader {
-    background-color: #cdb4db;
-    color: white;
+  background-color: #cdb4db;
+  color: white;
 }
 
-.completeIncompleteTable, .priorityTable {
-    background-color: white;
+.completeIncompleteTable,
+.priorityTable {
+  background-color: white;
 }
 
 .completeIncompleteTable {
-    width: 200px;
-    height: 65px;
-    margin: 20px auto;
+  width: 200px;
+  height: 65px;
+  margin: 20px auto;
 }
 
-
-.countCells{
-    width:50px;
+.countCells {
+  width: 50px;
 }
 
 .low {
-    background-color: #ffc8dd;
+  background-color: #ffc8dd;
 }
 
 .medium {
-    background-color: #ffafcc;
+  background-color: #ffafcc;
 }
 
 .high {
-    background-color: #cdb4db;
+  background-color: #cdb4db;
 }
 /*Iinput Styling*/
 input {
-    border-radius: 20px;
-    border: none;
-    width: 15em;
-    height: 2.5em;
-    color: #a84b77;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold; 
-    font-size: 1em;
-    
+  border-radius: 20px;
+  border: none;
+  width: 15em;
+  height: 2.5em;
+  color: #a84b77;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 /*Button Styling */
 .addTaskButton {
-    margin-left: 1em;
-    border-radius: 20px;
-    border: 1px solid #a84b77;
-    width: 8em;
-    height: 2.5em;
-    background-color: #ffc8dd;
-    background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold; 
-    font-size: 1em;
-    cursor: pointer;
+  margin-left: 1em;
+  border-radius: 20px;
+  border: 1px solid #a84b77;
+  width: 8em;
+  height: 2.5em;
+  background-color: #ffc8dd;
+  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 /* Modal Styles */
 .modal {
-    background-color: #fff;
-    border: 1px solid #a84b77;
-    border-radius: 10px;
-
+  background-color: #fff;
+  border: 1px solid #a84b77;
+  border-radius: 10px;
 }
 
 .modalTitle {
-    background-color: #a84b77;
-    color: white;
-}
-
-.modalContent {
-    padding: 90px;
+  background-color: #a84b77;
+  color: white;
 }
 
 .modalActions {
-    padding: 10px 20px;
-    justify-content: space-between;
+  padding: 10px 20px;
+  justify-content: space-between;
 }
 
 .cancel {
-    color: black;
+  color: black;
 }
 
 .select {
-    margin: 20px;
+  margin: 20px;
+}
+
+.taskLabel {
+  padding-bottom: 20px;
+}
+
+.selectInput {
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
