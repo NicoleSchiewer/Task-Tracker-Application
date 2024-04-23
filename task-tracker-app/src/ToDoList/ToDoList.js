@@ -161,20 +161,6 @@ const ToDoList = () => {
           </Button>
         </DialogActions>
       </Dialog>
-      <table className={classes.completeIncompleteTable}>
-        <thead>
-          <tr>
-            <th className={classes.inProgressHeader}>In-Progress</th>
-            <th className={classes.completedHeader}>Complete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{incompleteTaskCount}</td>
-            <td>{completeTaskCount}</td>
-          </tr>
-        </tbody>
-      </table>
 
       <table className={classes.priorityTable}>
         <thead>
@@ -192,6 +178,20 @@ const ToDoList = () => {
           ))}
         </tbody>
       </table>
+      <table className={classes.completeIncompleteTable}>
+        <thead>
+          <tr>
+            <th className={classes.inProgressHeader}>In-Progress</th>
+            <th className={classes.completedHeader}>Complete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{incompleteTaskCount}</td>
+            <td>{completeTaskCount}</td>
+          </tr>
+        </tbody>
+      </table>
       <TaskList
         tasks={tasks}
         setTasks={setTasks}
@@ -205,7 +205,6 @@ const ToDoList = () => {
         <h3>Completed Tasks</h3>
         {completedTasks.map((task) => (
           <p key={task.id}>
-            <input type='checkbox' checked disabled />
             {task.text} - {task.type} - {task.priority}
           </p>
         ))}

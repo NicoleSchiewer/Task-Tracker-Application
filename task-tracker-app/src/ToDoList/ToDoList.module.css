@@ -15,7 +15,6 @@ table,
 tr,
 th,
 td {
-  border: 1px solid #a84b77;
   border-collapse: collapse;
 }
 
@@ -36,7 +35,7 @@ td {
 .completeIncompleteTable {
   width: 200px;
   height: 65px;
-  margin: 20px auto;
+  margin: 50px;
 }
 
 .countCells {
@@ -54,24 +53,12 @@ td {
 .high {
   background-color: #cdb4db;
 }
-/*Iinput Styling*/
-input {
-  border-radius: 20px;
-  border: none;
-  width: 15em;
-  height: 2.5em;
-  color: #a84b77;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1em;
-}
 
 /*Button Styling */
 .addTaskButton {
   margin-left: 1em;
   border-radius: 20px;
-  border: 1px solid #a84b77;
+  border: none;
   width: 8em;
   height: 2.5em;
   background-color: #ffc8dd;
@@ -105,15 +92,11 @@ input {
   color: black;
 }
 
-.select {
-  margin: 20px;
-}
-
 .taskLabel {
   padding-bottom: 20px;
 }
 
 .selectInput {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
