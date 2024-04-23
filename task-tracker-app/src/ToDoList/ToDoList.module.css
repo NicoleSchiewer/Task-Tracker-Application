@@ -8,14 +8,37 @@
 .priorityTable {
   height: 155px;
   width: 200px;
-  margin: 20px 50px;
+}
+
+.completedTaskList {
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.individualCompletedTask {
+  color: #a84b77;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
 }
 /*Table Style Selectors */
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  margin: 4em auto;
+  align-items: center;
+}
+
 table,
 tr,
 th,
 td {
   border-collapse: collapse;
+  border: 1px solid #a84b7669;
 }
 
 .inProgressHeader {
@@ -33,9 +56,8 @@ td {
 }
 
 .completeIncompleteTable {
-  width: 200px;
   height: 65px;
-  margin: 50px;
+  width: 200px;
 }
 
 .countCells {
@@ -69,6 +91,7 @@ td {
   font-weight: bold;
   font-size: 1em;
   cursor: pointer;
+  border: 1px solid #a84b7669;
 }
 
 /* Modal Styles */

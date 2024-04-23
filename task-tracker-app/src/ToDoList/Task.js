@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 import classes from './Task.module.css';
