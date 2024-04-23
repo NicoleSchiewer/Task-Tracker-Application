@@ -39,6 +39,7 @@ th,
 td {
   border-collapse: collapse;
   border: 1px solid #a84b7669;
+  font-family: 'Roboto condensed';
 }
 
 .inProgressHeader {
@@ -86,8 +87,7 @@ td {
   background-color: #ffc8dd;
   background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
   color: white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto condensed';
   font-weight: bold;
   font-size: 1em;
   cursor: pointer;
