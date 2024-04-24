@@ -1,3 +1,7 @@
+# Task Tracker
+
+This application is utilized for tracking and managing tasks. A task can be added using the "Add Task" button. Within the "Actions" column of the table for the individual tasks, the checkbox can be used to "complete" a task, the pencil icon is used to edit the corresponding task, and the trash icon is used to delete the task.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
