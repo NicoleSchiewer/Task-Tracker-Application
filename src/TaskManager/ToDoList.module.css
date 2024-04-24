@@ -1,0 +1,124 @@
+.taskTrackerHeader {
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #a84b77;
+}
+
+.completedTaskList {
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #a84b77;
+}
+
+.individualCompletedTask {
+  font-size: 1.2em;
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #a84b77;
+}
+/*Table Style Selectors */
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  margin: 4em auto;
+}
+
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid #a84b7669;
+  font-family: 'Roboto condensed';
+}
+
+.inProgressHeader {
+  background-color: #d6a6be;
+  color: white;
+}
+.completedHeader {
+  background-color: #cdb4db;
+  color: white;
+}
+
+.completeIncompleteTable,
+.priorityTable {
+  background-color: white;
+}
+
+.completeIncompleteTable {
+  width: 200px;
+  height: 65px;
+}
+
+.priorityTable {
+  width: 200px;
+  height: 155px;
+}
+
+.countCells {
+  width: 50px;
+}
+
+.low {
+  background-color: #ffc8dd;
+}
+
+.medium {
+  background-color: #ffafcc;
+}
+
+.high {
+  background-color: #cdb4db;
+}
+
+/*Button Styling */
+.addTaskButton {
+  width: 8em;
+  height: 2.5em;
+  margin-left: 1em;
+  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
+  background-color: #ffc8dd;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: 'Roboto condensed';
+  font-weight: bold;
+  color: white;
+}
+
+/* Modal Styles */
+.modal {
+  background-color: #fff;
+  border: 1px solid #a84b77;
+  border-radius: 10px;
+}
+
+.modalTitle {
+  background-color: #a84b77;
+  color: white;
+}
+
+.modalActions {
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.cancel {
+  color: black !important;
+}
+
+.taskLabel {
+  padding-bottom: 20px;
+}
+
+.selectInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

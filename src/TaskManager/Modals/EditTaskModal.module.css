@@ -1,0 +1,45 @@
+/* Modal Styles */
+.modal {
+  background-color: #fff;
+  border: 1px solid #a84b77;
+  border-radius: 10px;
+}
+
+.modalTitle {
+  background-color: #a84b77;
+  color: white;
+}
+
+.modalActions {
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.cancel {
+  color: black !important;
+}
+
+.taskLabel {
+  padding-bottom: 20px;
+}
+
+.selectInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*Button Style*/
+.editTaskButton {
+  width: 8em;
+  height: 2.5em;
+  margin-left: 1em;
+  background: linear-gradient(to right, #ffc8dd, #ffafcc, #cdb4db);
+  background-color: #ffc8dd;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: 'Roboto condensed';
+  font-weight: bold;
+  color: white !important;
+}

@@ -1,0 +1,11 @@
+.taskManagerTable {
+  background-color: white;
+  width: 70em;
+  margin: 0 auto;
+  height: 7em;
+  font-family: 'Roboto condensed';
+}
+
+.lightPurpleRow {
+  background-color: #cdb4db;
+}

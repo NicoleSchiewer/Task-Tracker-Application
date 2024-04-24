@@ -1,0 +1,14 @@
+.completedTaskList {
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #a84b77;
+}
+
+.individualCompletedTask {
+  font-size: 1.2em;
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #a84b77;
+}

@@ -1,0 +1,9 @@
+.checkbox {
+  width: 15px;
+}
+
+.editIcon,
+.deleteIcon,
+.checkbox {
+  cursor: pointer;
+}
