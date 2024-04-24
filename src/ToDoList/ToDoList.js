@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 import classes from './ToDoList.module.css';
 import { Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
@@ -14,7 +14,7 @@ const ToDoList = () => {
     { id: 3, text: 'Task 3', type: 'home', priority: 'medium' }
   ]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [isEditing, setIsEditing] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editedTask, setEditedTask] = useState(null);
@@ -58,24 +58,40 @@ const ToDoList = () => {
   };
 
   const handleEditStart = (task) => {
-    if (task !== null) {
-      setEditedTask((prevEditedTask) => {
-        return task;
-      });
-      setEditModalOpen(true);
-    }
+    // Update isEditing to true first
+    setIsEditing(true);
+
+    // Set editedTask to the clicked task
+    const taskBeingEdited = setEditedTask(task);
+    console.log(editedTask);
+    return taskBeingEdited;
   };
 
+  useEffect(() => {
+    console.log(editedTask);
+    if (editedTask !== null) {
+      setEditModalOpen(true);
+    }
+  }, [editedTask]);
+
   const handleEdit = (editedTask) => {
+    console.log(editedTask);
+    // Map over the tasks array to find the task with the same ID as the edited task
     const updatedTasks = tasks.map((task) => {
       if (task.id === editedTask.id) {
-        console.log("I'm the edited task inside handleEdite" + editedTask); // Update the task with the editedTask object
+        // If the ID matches, update this task with the edited task object
+        return editedTask;
       }
-      return task; // Return unchanged task if ID doesn't match
+      // Return unchanged task if ID doesn't match
+      return task;
     });
+    console.log(updatedTasks);
+    // Update the tasks state with the modified task list
+    setTasks(updatedTasks);
+    console.log('TASKS', tasks);
 
-    setTasks(updatedTasks); // Update the tasks state with the modified task list
-    setEditModalOpen(false); // Close the edit modal after editing
+    // Close the edit modal after editing
+    setEditModalOpen(false);
   };
 
   const incompleteTaskCount = tasks.length;
@@ -167,7 +183,7 @@ const ToDoList = () => {
           </tbody>
         </table>
       </div>
-      <TaskList tasks={tasks} setTasks={setTasks} isEditing={isEditing} setIsEditing={setIsEditing} onEditStart={handleEditStart} onDelete={deleteTask} onComplete={markTaskCompleted} />
+      <TaskList tasks={tasks} setTasks={setTasks} onEditStart={handleEditStart} onDelete={deleteTask} onComplete={markTaskCompleted} />
       <EditTaskModal open={editModalOpen} handleClose={() => setEditModalOpen(false)} task={editedTask} handleEdit={handleEdit} />;
       <div>
         <h2 className={classes.completedTaskList}>Completed Tasks</h2>

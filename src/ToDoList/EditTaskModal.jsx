@@ -1,4 +1,3 @@
-// EditTaskModal.js
 import React, { useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
@@ -7,7 +6,8 @@ const EditTaskModal = ({ open, handleClose, task, handleEdit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditedTask({ ...editedTask, [name]: value });
+    setEditedTask({ ...editedTask, id: task.id, [name]: value });
+    console.log(editedTask);
   };
 
   const handleSave = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './TaskList.module.css';
 import Task from './Task';
 
-const TaskList = ({ tasks, setTasks, setIsEditing, onEditStart, onDelete, onComplete, isEditing }) => {
+const TaskList = ({ tasks, setTasks, onEditStart, onDelete, onComplete }) => {
   return (
     <table className={classes.taskManagerTable}>
       <thead>
@@ -22,21 +22,13 @@ const TaskList = ({ tasks, setTasks, setIsEditing, onEditStart, onDelete, onComp
             <td>{task.type}</td>
             <td>{task.priority}</td>
             <td>
-              <Task
-                task={task}
-                setTasks={setTasks}
-                setIsEditing={setIsEditing}
-                onEditStart={onEditStart}
-                onDelete={onDelete}
-                onComplete={onComplete}
-                isEditing={isEditing}
-              />
+              <Task task={task} setTasks={setTasks} onEditStart={onEditStart} onDelete={onDelete} onComplete={onComplete} />
             </td>
           </tr>
         ))}
       </tbody>
     </table>
   );
-}
+};
 
 export default TaskList;
