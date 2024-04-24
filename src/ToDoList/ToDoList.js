@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
 import TaskList from './TaskList';
 import classes from './ToDoList.module.css';
-import {
-  Button,
-  TextField,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem
-} from '@mui/material';
+import { Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import EditTaskModal from './EditTaskModal';
 
 const ToDoList = () => {
   const [inputValue, setInputValue] = useState('');
@@ -25,8 +15,9 @@ const ToDoList = () => {
   ]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [isEditing, setIsEditing] = useState(null);
-  const [setEditedText] = useState('');
   const [openModal, setOpenModal] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [editedTask, setEditedTask] = useState(null);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -67,8 +58,24 @@ const ToDoList = () => {
   };
 
   const handleEditStart = (task) => {
-    setIsEditing(task.id);
-    setEditedText(task.text);
+    if (task !== null) {
+      setEditedTask((prevEditedTask) => {
+        return task;
+      });
+      setEditModalOpen(true);
+    }
+  };
+
+  const handleEdit = (editedTask) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === editedTask.id) {
+        console.log("I'm the edited task inside handleEdite" + editedTask); // Update the task with the editedTask object
+      }
+      return task; // Return unchanged task if ID doesn't match
+    });
+
+    setTasks(updatedTasks); // Update the tasks state with the modified task list
+    setEditModalOpen(false); // Close the edit modal after editing
   };
 
   const incompleteTaskCount = tasks.length;
@@ -95,49 +102,24 @@ const ToDoList = () => {
     <div className={classes.taskTrackerContainer}>
       <h1 className={classes.taskTrackerHeader}>Task Manager</h1>
       <div className={classes.buttonContainer}>
-        <button
-          className={classes.addTaskButton}
-          onClick={() => setOpenModal(true)}
-        >
+        <button className={classes.addTaskButton} onClick={() => setOpenModal(true)}>
           Add Task
         </button>
       </div>
-      <Dialog
-        className={classes.modal}
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-      >
+      <Dialog className={classes.modal} open={openModal} onClose={() => setOpenModal(false)}>
         <DialogTitle className={classes.modalTitle}>Add Task</DialogTitle>
         <DialogContent className={classes.modalContent}>
-          <TextField
-            className={classes.selectInput}
-            autoFocus
-            margin='dense'
-            label='Task Name'
-            type='text'
-            fullWidth
-            value={inputValue}
-            onChange={handleInputChange}
-          />
+          <TextField className={classes.selectInput} autoFocus margin='dense' label='Task Name' type='text' fullWidth value={inputValue} onChange={handleInputChange} />
           <FormControl fullWidth>
             <InputLabel id='task-type-label'>Task Type</InputLabel>
-            <Select
-              className={classes.selectInput}
-              labelId='task-type-label'
-              value={taskType}
-              onChange={handleTaskTypeChange}
-            >
+            <Select className={classes.selectInput} labelId='task-type-label' value={taskType} onChange={handleTaskTypeChange}>
               <MenuItem value='work'>Work</MenuItem>
               <MenuItem value='home'>Home</MenuItem>
             </Select>
           </FormControl>
           <FormControl fullWidth>
             <InputLabel className={classes.taskLabel}>Task Priority</InputLabel>
-            <Select
-              className={classes.selectInput}
-              value={taskPriority}
-              onChange={handleTaskPriorityChange}
-            >
+            <Select className={classes.selectInput} value={taskPriority} onChange={handleTaskPriorityChange}>
               <MenuItem value='high'>High</MenuItem>
               <MenuItem value='medium'>Medium</MenuItem>
               <MenuItem value='low'>Low</MenuItem>
@@ -145,23 +127,14 @@ const ToDoList = () => {
           </FormControl>
         </DialogContent>
         <DialogActions className={classes.modalActions}>
-          <Button
-            className={classes.cancel}
-            onClick={() => setOpenModal(false)}
-          >
+          <Button className={classes.cancel} onClick={() => setOpenModal(false)}>
             Cancel
           </Button>
-          <Button
-            className={classes.addTaskButton}
-            onClick={handleAddTask}
-            variant='contained'
-            color='primary'
-          >
+          <Button className={classes.addTaskButton} onClick={handleAddTask} variant='contained' color='primary'>
             Add Task
           </Button>
         </DialogActions>
       </Dialog>
-
       <div className={classes.tableContainer}>
         <table className={classes.priorityTable}>
           <thead>
@@ -194,15 +167,8 @@ const ToDoList = () => {
           </tbody>
         </table>
       </div>
-      <TaskList
-        tasks={tasks}
-        setTasks={setTasks}
-        isEditing={isEditing}
-        setIsEditing={setIsEditing}
-        onEditStart={handleEditStart}
-        onDelete={deleteTask}
-        onComplete={markTaskCompleted}
-      />
+      <TaskList tasks={tasks} setTasks={setTasks} isEditing={isEditing} setIsEditing={setIsEditing} onEditStart={handleEditStart} onDelete={deleteTask} onComplete={markTaskCompleted} />
+      <EditTaskModal open={editModalOpen} handleClose={() => setEditModalOpen(false)} task={editedTask} handleEdit={handleEdit} />;
       <div>
         <h2 className={classes.completedTaskList}>Completed Tasks</h2>
         {completedTasks.map((task) => (
