@@ -2,6 +2,25 @@
 
 This application is utilized for tracking and managing tasks. A task can be added using the "Add Task" button. Within the "Actions" column of the table for the individual tasks, the checkbox can be used to "complete" a task, the pencil icon is used to edit the corresponding task, and the trash icon is used to delete the task.
 
+# Dependencies
+
+- @emotion/react: ^11.11.4
+- @emotion/styled: ^11.11.5
+- @mui/icons-material: ^5.15.15
+- @mui/material: ^5.15.15
+- @testing-library/jest-dom: ^5.17.0
+- @testing-library/react: ^13.4.0
+- @testing-library/user-event: ^13.5.0
+- react: ^18.2.0
+- react-dom: ^18.2.0
+- react-scripts: 5.0.1
+- web-vitals: ^2.1.4
+
+# Development Dependencies
+
+- @babel/plugin-proposal-private-property-in-object: ^7.21.11
+- @babel/plugin-transform-private-property-in-object: ^7.24.1
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

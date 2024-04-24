@@ -8,7 +8,6 @@ const EditTaskModal = ({ open, handleClose, task, handleEdit }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedTask({ ...editedTask, id: task.id, [name]: value });
-    console.log(editedTask);
   };
 
   const handleSave = () => {
